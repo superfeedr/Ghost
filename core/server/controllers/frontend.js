@@ -271,6 +271,7 @@ frontendControllers = {
                 description = result[2].value.value,
                 permalinks = result[3].value,
                 siteUrl = config.urlFor('home', null, true),
+                hubUrl = config()['hub'],
                 feedUrl =  config.urlFor('rss', null, true);
 
             feed = new RSS({
@@ -279,6 +280,7 @@ frontendControllers = {
                 generator: 'Ghost v' + res.locals.version,
                 feed_url: feedUrl,
                 site_url: siteUrl,
+                hub: hubUrl,
                 ttl: '60'
             });
 
